@@ -12,3 +12,7 @@ wget -O pltd.fasta 'https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?tool=portal&
 
 # generate a concatinated chloroplast-genome of 200x normal chloroplast
 (sed -n '1p' pltd.fasta; for i in $(seq 1 200); do sed '1d' pltd.fasta; done) | sed '/^$/d' > 200pltd.fasta
+# generate a concatinated mitochondrion-genome of 50x normal mitochondrion
+(sed -n '1p' mt.fasta; for i in $(seq 1 50); do sed '1d' mt.fasta; done) | sed '/^$/d' > 50mt.fasta
+
+cat 200pltd.fasta chr[12345].fasta 50mt.fasta > at.fa
