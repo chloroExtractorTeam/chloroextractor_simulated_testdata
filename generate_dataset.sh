@@ -29,4 +29,4 @@ art_bin_MountRainier/art_illumina --in at.fa --seqSys HS25 --samout --paired --o
 md5sum art.log at_simulated1.fq at_simulated2.fq >MD5SUM
 
 # create archive
-tar cf - at_simulated1.fq at_simulated2.fq art.log MD5SUM | pbzip2 --verbose -9 --compress --stdout
+tar cf - at_simulated1.fq at_simulated2.fq art.log MD5SUM | pbzip2 --verbose -9 --compress --stdout > /data/art_result.tar.bz2
