@@ -16,7 +16,7 @@ wget -O pltd.fasta 'https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?tool=portal&
 (sed -n '1p' mt.fasta; for i in $(seq 1 50); do sed '1d' mt.fasta; done) | sed '/^$/d' > 50mt.fasta
 
 # combine all sequences and 
-cat 200pltd.fasta chr[12345].fasta 50mt.fasta | sed -n '/^>/{s/^\(>[^[:space:]]*\).*/\1/g;p}' > at.fa
+cat 200pltd.fasta chr[12345].fasta 50mt.fasta | sed '/^>/{s/^\(>[^[:space:]]*\).*/\1/g}' > at.fa
 
 # download and extract art
 wget https://www.niehs.nih.gov/research/resources/assets/docs/artbinmountrainier20160605linux64tgz.tgz
