@@ -6,3 +6,5 @@ ADD generate_dataset.sh /tmp
 
 VOLUME /data
 WORKDIR /tmp
+
+CMD /tmp/generate_dataset.sh
