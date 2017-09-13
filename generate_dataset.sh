@@ -15,4 +15,5 @@ wget -O pltd.fasta 'https://www.ncbi.nlm.nih.gov/sviewer/viewer.cgi?tool=portal&
 # generate a concatinated mitochondrion-genome of 50x normal mitochondrion
 (sed -n '1p' mt.fasta; for i in $(seq 1 50); do sed '1d' mt.fasta; done) | sed '/^$/d' > 50mt.fasta
 
-cat 200pltd.fasta chr[12345].fasta 50mt.fasta > at.fa
+# combine all sequences and 
+cat 200pltd.fasta chr[12345].fasta 50mt.fasta | sed -n '/^>/{s/^\(>[^[:space:]]*\).*/\1/g;p}' > at.fa
