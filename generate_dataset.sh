@@ -18,7 +18,7 @@ wget https://www.niehs.nih.gov/research/resources/assets/docs/artbinmountrainier
 tar xzf artbinmountrainier20160605linux64tgz.tgz
 
 # simulate reads using art
-art_bin_MountRainier/art_illumina --in at.fa --seqSys HS25 --samout --paired --out at_simulated --len 150 --sdev 50 --mflen 500 --fcov 1 --rndSeed 1505309059 &>art.log
+art_bin_MountRainier/art_illumina --in at.fa --seqSys HS25 --samout --paired --out at_simulated --len 150 --sdev 50 --mflen 500 --fcov 2 --rndSeed 1505309059 &>art.log
 
 # calculate checksums
 md5sum art.log at_simulated1.fq at_simulated2.fq >MD5SUM
